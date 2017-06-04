@@ -13,6 +13,8 @@ namespace OpenBBot.Services
         private static LowLevelKeyboardProc _proc = HookCallback;
         private static IntPtr _hookID = IntPtr.Zero;
 
+        public static Action ExternalCallback { get; set; }
+
         [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
         private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelKeyboardProc lpfn, IntPtr hMod, uint dwThreadId);
 
@@ -32,6 +34,12 @@ namespace OpenBBot.Services
         public static void InstallHook()
         {
             _hookID = SetHook(_proc);
+        }
+
+        public static void InstallHook(Action externalCallBack)
+        {
+            _hookID = SetHook(_proc);
+            ExternalCallback = externalCallBack;
         }
 
         public static void UninstallHook()
@@ -65,12 +73,10 @@ namespace OpenBBot.Services
                 // Test if code is corresponding to hotkey
                 if ((Key)vkCode == Key.RightShift)
                 {
-                    ClickingThread.Switch();
+                    ExternalCallback();
                 }
             }
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
         }
-
-        private static ClickingThreadService ClickingThread = new ClickingThreadService(20);
     }
 }

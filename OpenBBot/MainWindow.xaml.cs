@@ -22,9 +22,11 @@ namespace OpenBBot
     /// </summary>
     public partial class MainWindow : Window
     {
+        private static ClickingThreadService ClickingThread = new ClickingThreadService(20);
+
         public MainWindow()
         {
-            GlobalListenerService.InstallHook();
+            GlobalListenerService.InstallHook(ClickingThread.Switch);
             InitializeComponent();
         }
     }
