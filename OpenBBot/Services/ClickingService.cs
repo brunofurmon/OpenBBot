@@ -75,8 +75,7 @@ namespace OpenBBot.Services
 
         private static Point GetCursorPosition()
         {
-            POINT lpPoint;
-            GetCursorPos(out lpPoint);
+            GetCursorPos(out POINT lpPoint);
             return lpPoint;
         }
 
