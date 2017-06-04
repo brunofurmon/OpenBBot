@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenBBot", "OpenBBot\OpenBBot.csproj", "{F8F6C656-75C4-40FA-9B60-3EF27881E808}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "OpenBBot.Installer", "OpenBBot.Installer\OpenBBot.Installer.vdproj", "{A0F091B9-CD87-4852-8FE1-B55FB6C6BE6F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{F8F6C656-75C4-40FA-9B60-3EF27881E808}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8F6C656-75C4-40FA-9B60-3EF27881E808}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8F6C656-75C4-40FA-9B60-3EF27881E808}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0F091B9-CD87-4852-8FE1-B55FB6C6BE6F}.Debug|Any CPU.ActiveCfg = Debug
+		{A0F091B9-CD87-4852-8FE1-B55FB6C6BE6F}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
