@@ -5,7 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OpenBBot"
         mc:Ignorable="d"
-        Title="MainWindow" Height="139.157" Width="299.398">
+        Title="OpenBBot" Height="137" Width="159">
     <Grid x:Name="MainGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="15" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.Row="0">
+            <TabItem Header="Click">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15*" />
+                        <RowDefinition Height="13*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="25" />
+                    </Grid.ColumnDefinitions>
+                    <Label   Grid.Row="0" Grid.Column="0" Name="KeyLabel" Content="Key:"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="F6"/>
+                    <Label   Grid.Row="1" Grid.Column="0" Content="Interval:"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="20" />
+                    <Label   Grid.Row="1" Grid.Column="2" Name="IntervalUnity"  Content="ms" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StatusBar Grid.Row="1" RenderTransformOrigin="0.5,0.5">
+            <StatusBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="-1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </StatusBar.RenderTransform>
+            <Label Name="StatusLabel" Content="Ready" Width="45" Height="11" />
+        </StatusBar>
     </Grid>
 </Window>
