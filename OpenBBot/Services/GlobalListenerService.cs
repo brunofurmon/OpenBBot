@@ -61,9 +61,8 @@ namespace OpenBBot.Services
             if (nCode >= 0 && wParam == (IntPtr)WM_KEYDOWN)
             {
                 int vkCode = Marshal.ReadInt32(lParam);
-                // Test if code is corresponding to hotkey
-                Console.WriteLine((Key)vkCode);
 
+                // Test if code is corresponding to hotkey
                 if ((Key)vkCode == Key.RightShift)
                 {
                     ClickingThread.Switch();
