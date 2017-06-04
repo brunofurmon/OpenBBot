@@ -15,6 +15,9 @@ namespace OpenBBot.Services
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         private static extern void mouse_event(uint dwFlags, uint dx, uint dy, uint cButtons, uint dwExtraInfo);
 
+        [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
+        public static extern bool GetCursorPos(out POINT lpPoint);
+
         public ClickingThreadService() : base()
         {
             IsAlive = false;
@@ -65,13 +68,6 @@ namespace OpenBBot.Services
                 Thread.Sleep(Interval);
             }
         }
-
-        /// <summary>
-        /// Retrieves the cursor's position, in screen coordinates.
-        /// </summary>
-        /// <see>See MSDN documentation for further information.</see>
-        [DllImport("user32.dll")]
-        public static extern bool GetCursorPos(out POINT lpPoint);
 
         private static Point GetCursorPosition()
         {

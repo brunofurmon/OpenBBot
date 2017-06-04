@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OpenBBot"
         mc:Ignorable="d"
-        Title="OpenBBot" Height="137" Width="159">
+        Title="OpenBBot" Height="147.99" Width="250.578">
     <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
