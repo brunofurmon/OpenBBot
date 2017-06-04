@@ -18,7 +18,7 @@ namespace OpenBBot.Services
         public ClickingThreadService() : base()
         {
             IsAlive = false;
-            this.Interval = 1000;
+            this.Interval = 20;
         }
 
         public ClickingThreadService(int interval) : base()

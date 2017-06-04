@@ -72,6 +72,6 @@ namespace OpenBBot.Services
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
         }
 
-        private static ClickingThreadService ClickingThread = new ClickingThreadService(1000);
+        private static ClickingThreadService ClickingThread = new ClickingThreadService(20);
     }
 }
