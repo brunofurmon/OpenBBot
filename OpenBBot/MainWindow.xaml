@@ -29,7 +29,9 @@
                     <Label   Grid.Row="0" Grid.Column="0" Name="KeyLabel" Content="Key:"/>
                     <TextBox Grid.Row="0" Grid.Column="1" Text="F6"/>
                     <Label   Grid.Row="1" Grid.Column="0" Content="Interval:"/>
-                    <TextBox Grid.Row="1" Grid.Column="1" Text="20" />
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="20" Name="IntervalInput"
+                         PreviewTextInput="IntervalInput_PreviewTextInput"
+                         PreviewKeyDown="IntervalInput_PreviewKeyDown" />
                     <Label   Grid.Row="1" Grid.Column="2" Name="IntervalUnity"  Content="ms" />
                 </Grid>
             </TabItem>
