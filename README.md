@@ -11,3 +11,5 @@ Soon
 
 ## Installation
 Build it as you'd like.
+Defaulted to F6 key and currently not reading the ms input box.
+It is assuming an interval of 20ms. (1000ms when switched off)
