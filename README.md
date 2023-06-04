@@ -1,4 +1,13 @@
 # OpenBBot
-## Open Source Bot for clicking, written in .Net 4.6.
+## Open Source Bot for clicking. Written originally in .Net Framework 4.6, but migrated to dotnet 7.
 
-Because Nagas are not that cheap.
+**Because Gaming Mouses are not cheap.**
+
+## Contributing
+Soon
+
+## Release Notes
+Soon
+
+## Installation
+Build it as you'd like.
