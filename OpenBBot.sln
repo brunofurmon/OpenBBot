@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Window", "Window\Window.csproj", "{60AD1A62-F9C5-4A65-A2A8-684C0C9852AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenBBot", "Window\OpenBBot.csproj", "{60AD1A62-F9C5-4A65-A2A8-684C0C9852AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{CE693D05-2318-4F9D-BC35-36D97929C3EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{CE693D05-2318-4F9D-BC35-36D97929C3EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

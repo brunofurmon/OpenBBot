@@ -32,11 +32,11 @@
 			tabPage1 = new TabPage();
 			flowLayoutPanel1 = new FlowLayoutPanel();
 			inputLabel = new Label();
-			numericUpDown1 = new NumericUpDown();
+			milissecondsSelector = new NumericUpDown();
 			tabControl1.SuspendLayout();
 			tabPage1.SuspendLayout();
 			flowLayoutPanel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+			((System.ComponentModel.ISupportInitialize)milissecondsSelector).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -63,7 +63,7 @@
 			// flowLayoutPanel1
 			// 
 			flowLayoutPanel1.Controls.Add(inputLabel);
-			flowLayoutPanel1.Controls.Add(numericUpDown1);
+			flowLayoutPanel1.Controls.Add(milissecondsSelector);
 			flowLayoutPanel1.Dock = DockStyle.Fill;
 			flowLayoutPanel1.Location = new Point(3, 3);
 			flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -80,13 +80,17 @@
 			inputLabel.TabIndex = 1;
 			inputLabel.Text = "ms";
 			// 
-			// numericUpDown1
+			// milissecondsSelector
 			// 
-			numericUpDown1.Dock = DockStyle.Fill;
-			numericUpDown1.Location = new Point(37, 3);
-			numericUpDown1.Name = "numericUpDown1";
-			numericUpDown1.Size = new Size(150, 27);
-			numericUpDown1.TabIndex = 0;
+			milissecondsSelector.Dock = DockStyle.Fill;
+			milissecondsSelector.Location = new Point(37, 3);
+			milissecondsSelector.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
+			milissecondsSelector.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+			milissecondsSelector.Name = "milissecondsSelector";
+			milissecondsSelector.Size = new Size(150, 27);
+			milissecondsSelector.TabIndex = 0;
+			milissecondsSelector.Value = new decimal(new int[] { 20, 0, 0, 0 });
+			milissecondsSelector.ValueChanged += this.milissecondsSelector_ValueChanged;
 			// 
 			// MainForm
 			// 
@@ -100,7 +104,7 @@
 			tabPage1.ResumeLayout(false);
 			flowLayoutPanel1.ResumeLayout(false);
 			flowLayoutPanel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+			((System.ComponentModel.ISupportInitialize)milissecondsSelector).EndInit();
 			this.ResumeLayout(false);
 		}
 
@@ -110,6 +114,6 @@
 		private TabPage tabPage1;
 		private FlowLayoutPanel flowLayoutPanel1;
 		private Label inputLabel;
-		private NumericUpDown numericUpDown1;
+		private NumericUpDown milissecondsSelector;
 	}
 }

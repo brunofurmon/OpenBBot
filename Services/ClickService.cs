@@ -1,10 +1,11 @@
 ﻿using Services.Models;
+using System.Data.Common;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
 namespace Services
 {
-    public class ClickService
+	public class ClickService : IDisposable
 	{
 		private Thread ClickingThread { get; set; }
 
@@ -38,20 +39,14 @@ namespace Services
 			ClickingThread.Start();
 		}
 
-		~ClickService()
-		{
-			ClickingThread.Join();
-		}
-
 		private void StartClicking()
 		{
-			Interval = 20;
 			IsAlive = true;
 		}
 
 		private void Stop()
 		{
-			Interval = 1000;
+			
 			IsAlive = false;
 		}
 
@@ -79,8 +74,11 @@ namespace Services
 					uint Y = (uint)currentCursorPosition.Y;
 
 					mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, X, Y, 0, 0);
+					Thread.Sleep(Interval);
+				} else
+				{
+					Thread.Sleep(500);
 				}
-				Thread.Sleep(Interval);
 			}
 		}
 
@@ -88,6 +86,26 @@ namespace Services
 		{
 			GetCursorPos(out POINT lpPoint);
 			return lpPoint;
+		}
+
+		public void UpdateInterval(int value)
+		{
+			IsAlive = false;
+			Interval = value;
+		}
+
+		public void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
+
+		protected virtual void Dispose(bool disposing)
+		{
+			if (disposing && ClickingThread != null)
+			{
+				ClickingThread.Join();
+			}
 		}
 	}
 }

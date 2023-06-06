@@ -20,7 +20,10 @@ namespace Window
 			var ClickingThread = new ClickService(20);
 			GlobalListenerService.InstallHook(ClickingThread.Switch);
 
-			Application.Run(new MainForm());
+			MainForm mainForm = new MainForm(ClickingThread);
+			mainForm.Show();
+
+			Application.Run();
 		}
 	}
 }
